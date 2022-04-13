@@ -1,15 +1,15 @@
+from src.strategy.base_long_strategy import BaseLongStrategy
 from itertools import product
 import pandas as pd
 import numpy as np
 
 
 class LongOnlyBacktester:
-    """ Class for the vectorized backtesting of simple Long-only trading strategies.
+    """
+    Class for the vectorized backtesting of simple Long-only trading
+    strategies.
 
-    Attributes
-    ============
-    filepath: str
-        local filepath of the dataset (csv-file)
+    :param BaseLongStrategy strategy: strategy to evaluate.
     symbol: str
         ticker symbol (instrument) to be backtested
     start: str
@@ -49,7 +49,7 @@ class LongOnlyBacktester:
 
     """
 
-    def __init__(self, filepath, symbol, start, end, tc):
+    def __init__(self, strategy: BaseLongStrategy, symbol, start, end, tc):
 
         self.filepath = filepath
         self.symbol = symbol
