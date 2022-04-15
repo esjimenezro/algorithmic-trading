@@ -4,8 +4,7 @@ import numpy as np
 
 class BaseLongStrategy:
     """
-    Template class for the vectorized backtesting of Long-only trading
-    strategies.
+    Template class for Long-only trading strategies.
 
     Methods
     -------

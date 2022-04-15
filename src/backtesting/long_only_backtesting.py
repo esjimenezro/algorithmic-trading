@@ -1,4 +1,5 @@
 from src.strategy.base_long_strategy import BaseLongStrategy
+from matplotlib import pyplot as plt
 from urllib.error import HTTPError
 from itertools import product
 import pandas as pd
@@ -16,8 +17,8 @@ class LongOnlyBacktester:
         strategy to evaluate.
     symbol : str
         symbol to apply the strategy to.
-    filepath : str
-        filepath to the data.
+    time_frame : str
+        one of the valid time frames.
     start : str
         start date for data import.
     end : str
@@ -174,8 +175,10 @@ class LongOnlyBacktester:
         if self.position_data is None:
             print("Run test_strategy() first.")
         else:
+            plt.figure()
             self.position_data[["cum_returns", "cum_strategy"]].plot(title=self.symbol,
                                                                      figsize=(12, 8))
+            plt.show()
 
     def optimize_strategy(self, param_ranges: dict, metric: str = "Multiple"):
         """
