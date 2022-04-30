@@ -3,7 +3,9 @@ python-dotenv==0.20.0
 matplotlib==3.5.1
 yfinance==0.1.70
 notebook==6.4.8
+seaborn==0.11.2
+TA-Lib==0.4.24
 pandas==1.4.1
 numpy==1.22.3
 ccxt==1.78.39
-
+scipy==1.8.0
